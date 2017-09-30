@@ -1,10 +1,12 @@
-# jass README
+# War3 Editor Script -- Jass Extension for VSCode
 
-This is the README for your extension "jass". After writing up a brief description, we recommend including the following sections.
+This is the Chinese README for this Jass extension.
 
-## Features
+## 功能说明
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+这是VSCode的魔兽争霸3地图编辑器JASS语法高亮插件.
+
+
 
 For example if there is an image subfolder under your extension project workspace:
 

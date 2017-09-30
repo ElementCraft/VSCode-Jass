@@ -19,9 +19,87 @@
 		},
 		{
 			"include": "#opt"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#functionsa"
 		}
 	],
 	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"captures": {
+						"1": {
+							"name": "meta.toc-list.banner.block.jass"
+						}
+					},
+					"match": "^/\\* =(\\s*.*?)\\s*= \\*/$\\n?",
+					"name": "comment.block.jass"
+				},
+				{
+					"begin": "/\\*",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.begin.jass"
+						}
+					},
+					"end": "\\*/",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.end.jass"
+						}
+					},
+					"name": "comment.block.jass"
+				},
+				{
+					"match": "\\*/.*\\n",
+					"name": "invalid.illegal.stray-comment-end.jass"
+				},
+				{
+					"captures": {
+						"1": {
+							"name": "meta.toc-list.banner.line.jass"
+						}
+					},
+					"match": "^// =(\\s*.*?)\\s*=\\s*$\\n?",
+					"name": "comment.line.banner.jass"
+				},
+				{
+					"begin": "(^[ \\t]+)?(?=//)",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.whitespace.comment.leading.cpp"
+						}
+					},
+					"end": "(?!\\G)",
+					"patterns": [
+						{
+							"begin": "//",
+							"beginCaptures": {
+								"0": {
+									"name": "punctuation.definition.comment.cpp"
+								}
+							},
+							"end": "(?=\\n)",
+							"name": "comment.line.double-slash.cpp",
+							"patterns": [
+								{
+									"match": "(\\\\)\\n",
+									"captures": {
+										"1": {
+											"name": "constant.character.escape.line-continuation.c"
+										}
+									}
+								}
+							]
+						}
+					]
+				}
+			]
+		},
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.jass",
@@ -70,8 +148,17 @@
 					"match": "\\b(and|or|not)\\b"
 				}
 			]
+		},
+		"functionsa":{
+			"patterns": [
+				{
+					"name": "support.function.jass",
+					"match": "\\b(GetUnitX|GetUnitY)\\b"
+				}
+			]
 		}
 
+		
 	},
 	"scopeName": "source.j"
 }
