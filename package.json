@@ -1,0 +1,32 @@
+{
+    "name": "jass",
+    "displayName": "Jass",
+    "description": "",
+    "version": "0.0.1",
+    "publisher": "ElementCraft",
+    "engines": {
+        "vscode": "^1.16.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "jass",
+            "aliases": ["Jass", "jass"],
+            "extensions": [".j",".jass"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "jass",
+            "scopeName": "source.j",
+            "path": "./syntaxes/jass.tmLanguage.json"
+        }],
+        "snippets": [
+            {
+                "language": "jass",
+                "path": "./snippets/snippets.json"
+            }
+        ]
+    }
+}
